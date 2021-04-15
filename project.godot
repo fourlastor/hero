@@ -1,0 +1,45 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Reference",
+"class": "GameDb",
+"language": "GDScript",
+"path": "res://State/GameDb.gd"
+}, {
+"base": "Reference",
+"class": "Project",
+"language": "GDScript",
+"path": "res://State/Project.gd"
+}, {
+"base": "Area2D",
+"class": "Token",
+"language": "GDScript",
+"path": "res://Map/Token.gd"
+} ]
+_global_script_class_icons={
+"GameDb": "",
+"Project": "",
+"Token": ""
+}
+
+[application]
+
+config/name="Vtt"
+run/main_scene="res://Map/Map.tscn"
+config/icon="res://icon.png"
+
+[gdnative]
+
+singletons=[  ]
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
