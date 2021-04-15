@@ -5,7 +5,7 @@ var camera_offset = Vector2.ZERO
 
 onready var center = get_viewport_rect().size / 2
 
-var selection
+var selection: CollisionObject2D
 
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
@@ -44,13 +44,12 @@ func drag(event: InputEvent):
     if results.size() == 0:
         return
     var result = results[0]
-    selection = result['collider']
-    if selection is Token:
+    var collider = result['collider']
+    if collider is CollisionObject2D:
         var shape_id = result['shape']
-        var owner_id = selection.shape_find_owner(shape_id)
-        print(selection.shape_owner_get_shape(owner_id, shape_id).extents)
-    else:
-        print("Not a token")
+        var owner_id = collider.shape_find_owner(shape_id)
+        selection = collider
+        print(collider.shape_owner_get_shape(owner_id, shape_id).extents)
 
 func drop():
     selection = null
