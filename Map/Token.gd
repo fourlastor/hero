@@ -32,3 +32,9 @@ func _input_event(viewport: Object, event: InputEvent, shape_idx: int) -> void:
             emit_signal("token_dragged", self)
         else:
             emit_signal("token_dropped")
+            
+# TODO
+#func shadow() -> Node:
+#    var node := $Sprite.duplicate()
+#    node.modulate.a = 0.5
+#    return node

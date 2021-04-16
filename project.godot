@@ -9,15 +9,40 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "SelectionState",
+"class": "Dragging",
+"language": "GDScript",
+"path": "res://Map/Selection/State/Dragging.gd"
+}, {
 "base": "Reference",
 "class": "GameDb",
 "language": "GDScript",
 "path": "res://State/GameDb.gd"
 }, {
+"base": "NinePatchRect",
+"class": "Handles",
+"language": "GDScript",
+"path": "res://Map/Selection/Handles.gd"
+}, {
+"base": "SelectionState",
+"class": "Idle",
+"language": "GDScript",
+"path": "res://Map/Selection/State/Idle.gd"
+}, {
 "base": "Reference",
 "class": "Project",
 "language": "GDScript",
 "path": "res://State/Project.gd"
+}, {
+"base": "SelectionState",
+"class": "Selected",
+"language": "GDScript",
+"path": "res://Map/Selection/State/Selected.gd"
+}, {
+"base": "Node2D",
+"class": "SelectionState",
+"language": "GDScript",
+"path": "res://Map/Selection/State/SelectionState.gd"
 }, {
 "base": "Area2D",
 "class": "Token",
@@ -25,8 +50,13 @@ _global_script_classes=[ {
 "path": "res://Map/Token.gd"
 } ]
 _global_script_class_icons={
+"Dragging": "",
 "GameDb": "",
+"Handles": "",
+"Idle": "",
 "Project": "",
+"Selected": "",
+"SelectionState": "",
 "Token": ""
 }
 
@@ -39,6 +69,14 @@ config/icon="res://icon.png"
 [gdnative]
 
 singletons=[  ]
+
+[input]
+
+ui_drag={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [rendering]
 

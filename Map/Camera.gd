@@ -1,12 +1,12 @@
 extends Camera2D
 
-const ZOOM_MIN = 1/8
-const ZOOM_MAX = 8
-const ZOOM_STEP = 0.1
+const ZOOM_MIN = 0.3
+const ZOOM_MAX = 4
+const ZOOM_STEP = 0.2
 const ZOOM_IN = -ZOOM_STEP
 const ZOOM_OUT = +ZOOM_STEP
 
-signal camera_movement(zoom, offset)
+signal camera_moved(zoom, offset)
 
 export var smooth: bool = true
 
@@ -38,7 +38,9 @@ func _input(event: InputEvent) -> void:
 func zoom_at_point(zoom_change: float, zoom_center: Vector2) -> void:
     var viewport_center = 0.5 * get_viewport().size
     var previous_zoom = zoom
-    var next_zoom = previous_zoom + Vector2(zoom_change, zoom_change)
+    var next_z_x = clamp(zoom_change + previous_zoom.x, ZOOM_MIN, ZOOM_MAX)
+    var next_z_y = clamp(zoom_change + previous_zoom.y, ZOOM_MIN, ZOOM_MAX)
+    var next_zoom =  Vector2(next_z_x, next_z_y)
     var next_offset = offset + (zoom_center - viewport_center) * (next_zoom - previous_zoom)
     
     if smooth:
@@ -51,7 +53,7 @@ func zoom_at_point(zoom_change: float, zoom_center: Vector2) -> void:
         emit_change()
         
 func emit_change() -> void:
-    emit_signal("camera_movement", zoom, offset)
+    emit_signal("camera_moved", zoom, offset)
     
 func _on_tween_step(_object: Object, _key: NodePath, _elapsed: float, _value: Object) -> void:
     emit_change()

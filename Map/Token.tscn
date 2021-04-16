@@ -8,7 +8,7 @@
 light_mode = 1
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 34.9892, 35.2488 )
+extents = Vector2( 32, 32 )
 
 [node name="Token" type="Area2D"]
 position = Vector2( 832.315, 251.44 )
