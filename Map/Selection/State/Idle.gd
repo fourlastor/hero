@@ -20,6 +20,6 @@ func attempt_drag():
     var shape = collider.shape_owner_get_shape(owner_id, shape_id)
     if shape is RectangleShape2D:
         persistent.selection = collider #.shadow()
-        change_state("selected")
         persistent.handles.selected(collider.global_position, shape.extents)
+        change_state("selected")
 
