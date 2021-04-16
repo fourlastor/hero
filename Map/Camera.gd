@@ -6,21 +6,15 @@ const ZOOM_STEP = 0.2
 const ZOOM_IN = -ZOOM_STEP
 const ZOOM_OUT = +ZOOM_STEP
 
-signal camera_moved(zoom, offset)
-
 export var smooth: bool = true
 
 var panning: bool = false
 onready var tween: Tween = $Tween
 
-func _ready() -> void:
-    tween.connect("tween_step", self, "_on_tween_step")
-
 func _input(event: InputEvent) -> void:
     if event is InputEventMouseMotion:
         if panning:
             offset -= event.relative * zoom
-            emit_change()
     elif event is InputEventMouseButton:
         var mouse_position = event.position
         match event.button_index:
@@ -50,10 +44,3 @@ func zoom_at_point(zoom_change: float, zoom_center: Vector2) -> void:
     else:
         zoom = next_zoom
         offset += next_offset
-        emit_change()
-        
-func emit_change() -> void:
-    emit_signal("camera_moved", zoom, offset)
-    
-func _on_tween_step(_object: Object, _key: NodePath, _elapsed: float, _value: Object) -> void:
-    emit_change()

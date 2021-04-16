@@ -140,4 +140,3 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="camera_moved" from="Camera" to="." method="_on_camera_moved"]

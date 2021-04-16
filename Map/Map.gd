@@ -14,7 +14,7 @@ onready var states := {
 }
 
 var selection_state: SelectionState
-onready var persistent := SelectionState.Persistent.new(Vector2.ZERO, Vector2.ONE, $Handles)
+onready var persistent := SelectionState.Persistent.new($Camera, $Handles)
 
 func change_selection_state(state_name: String) -> void:
     assert(states.has(state_name))
@@ -28,7 +28,3 @@ func change_selection_state(state_name: String) -> void:
     
 func _input(event: InputEvent) -> void:
     selection_state.input(event)
-
-func _on_camera_moved(zoom, offset) -> void:
-    persistent.camera_zoom = zoom
-    persistent.camera_offset = offset
