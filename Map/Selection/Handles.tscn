@@ -2,7 +2,8 @@
 
 [ext_resource path="res://Map/Selection/Handles.gd" type="Script" id=1]
 [ext_resource path="res://Map/light.shader" type="Shader" id=2]
-[ext_resource path="res://handles.png" type="Texture" id=3]
+[ext_resource path="res://assets/handles.png" type="Texture" id=3]
+
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
