@@ -1,8 +1,8 @@
 [gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://example.png" type="Texture" id=1]
-[ext_resource path="res://black.png" type="Texture" id=2]
-[ext_resource path="res://light.png" type="Texture" id=3]
+[ext_resource path="res://assets/example.png" type="Texture" id=1]
+[ext_resource path="res://assets/black.png" type="Texture" id=2]
+[ext_resource path="res://assets/light.png" type="Texture" id=3]
 [ext_resource path="res://Map/Token.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Map/Map.gd" type="Script" id=5]
 [ext_resource path="res://Map/Selection/Handles.tscn" type="PackedScene" id=6]
