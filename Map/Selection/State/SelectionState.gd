@@ -5,13 +5,13 @@ signal change_state(state_name)
 
 var persistent: Persistent
 
-func setup(persistent: Persistent):
-    self.persistent = persistent
+func setup(_persistent: Persistent):
+    persistent = _persistent
 
 func enter() -> void:
     pass
 
-func input(event: InputEvent) -> void:
+func input(_event: InputEvent) -> void:
     pass
     
 func exit() -> void:
@@ -37,9 +37,9 @@ func change_state(state_name: String) -> void:
 
 class Persistent:
     
-    func _init(camera: Camera2D, handles: Handles) -> void:
-        self.camera = camera
-        self.handles = handles
+    func _init(_camera: Camera2D, _handles: Handles) -> void:
+        camera = _camera
+        handles = _handles
     
     var camera: Camera2D
     var selection: Token

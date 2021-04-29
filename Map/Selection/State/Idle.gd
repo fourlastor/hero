@@ -4,7 +4,7 @@ class_name Idle
 func enter() -> void:
     persistent.handles.deselected()
 
-func input(event: InputEvent) -> void:
+func input(_event: InputEvent) -> void:
     if Input.is_action_just_pressed("ui_drag"):
         attempt_drag()
       
