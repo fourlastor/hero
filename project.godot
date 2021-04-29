@@ -14,11 +14,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Map/Selection/State/Dragging.gd"
 }, {
-"base": "Reference",
-"class": "GameDb",
-"language": "GDScript",
-"path": "res://State/GameDb.gd"
-}, {
 "base": "NinePatchRect",
 "class": "Handles",
 "language": "GDScript",
@@ -28,11 +23,6 @@ _global_script_classes=[ {
 "class": "Idle",
 "language": "GDScript",
 "path": "res://Map/Selection/State/Idle.gd"
-}, {
-"base": "Reference",
-"class": "Project",
-"language": "GDScript",
-"path": "res://State/Project.gd"
 }, {
 "base": "SelectionState",
 "class": "Selected",
@@ -51,10 +41,8 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Dragging": "",
-"GameDb": "",
 "Handles": "",
 "Idle": "",
-"Project": "",
 "Selected": "",
 "SelectionState": "",
 "Token": ""
