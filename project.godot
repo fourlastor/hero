@@ -50,7 +50,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Vtt"
+config/name="Hero"
 run/main_scene="res://Map/Map.tscn"
 config/icon="res://assets/icon.png"
 
