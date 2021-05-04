@@ -125,8 +125,6 @@ light_mask = 3
 occluder = SubResource( 8 )
 light_mask = 3
 
-[node name="LightOccluder2D9" type="LightOccluder2D" parent="Walls"]
-
 [node name="Camera" parent="." instance=ExtResource( 7 )]
 position = Vector2( 515.987, 300.028 )
 
