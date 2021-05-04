@@ -7,7 +7,7 @@ func input(event: InputEvent) -> void:
     elif event is InputEventMouseMotion and Input.is_action_pressed("ui_drag") and token_under_mouse():
         change_state("dragging")
 
-func token_under_mouse():
+func token_under_mouse() -> bool:
     var tokens = tokens_at(get_global_mouse_position())
     for token in tokens:
         if token['collider'] == persistent.selection:
