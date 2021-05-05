@@ -14,7 +14,7 @@ onready var states := {
 }
 
 var selection_state: SelectionState
-onready var persistent := SelectionState.Persistent.new($Camera, $Handles)
+onready var persistent := SelectionState.Persistent.new($Camera, $Handles, $Grid)
 
 func change_selection_state(state_name: String) -> void:
     assert(states.has(state_name))

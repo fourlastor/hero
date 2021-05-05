@@ -37,10 +37,12 @@ func change_state(state_name: String) -> void:
 
 class Persistent:
     
-    func _init(_camera: Camera2D, _handles: Handles) -> void:
+    func _init(_camera: Camera2D, _handles: Handles, _grid: TileMap) -> void:
         camera = _camera
         handles = _handles
+        grid = _grid
     
     var camera: Camera2D
     var selection: Token
     var handles: Handles
+    var grid: TileMap
