@@ -8,7 +8,7 @@ func input(_event: InputEvent) -> void:
     if Input.is_action_just_pressed("ui_drag"):
         attempt_drag()
       
-func attempt_drag():
+func attempt_drag() -> void:
     var results = tokens_at(get_global_mouse_position())
     
     if results.size() == 0:

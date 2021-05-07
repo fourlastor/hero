@@ -55,7 +55,7 @@ texture = ExtResource( 1 )
 [node name="TokenLayer" type="Node2D" parent="."]
 
 [node name="Token" parent="TokenLayer" instance=ExtResource( 4 )]
-position = Vector2( 778.407, 265.578 )
+position = Vector2( 128.373, 108.157 )
 monitoring = false
 monitorable = false
 
@@ -125,8 +125,6 @@ light_mask = 3
 occluder = SubResource( 8 )
 light_mask = 3
 
-[node name="LightOccluder2D9" type="LightOccluder2D" parent="Walls"]
-
 [node name="Camera" parent="." instance=ExtResource( 7 )]
 position = Vector2( 515.987, 300.028 )
 
@@ -140,3 +138,8 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Grid" type="TileMap" parent="."]
+cell_size = Vector2( 70, 70 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+format = 1
